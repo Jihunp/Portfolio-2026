@@ -1,0 +1,121 @@
+<style>
+.scene {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  perspective: 800px;
+  background: #000;
+}
+
+.saturn-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0;
+  transform-style: preserve-3d;
+}
+
+.label {
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 10;
+  white-space: nowrap;
+}
+
+.rings-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+  pointer-events: none;
+}
+
+.ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.saturn-link:hover .ring { opacity: 1; }
+
+.ring.fwd  { animation: spin 3s linear infinite paused; }
+.ring.rev  { animation: spin 5s linear infinite reverse paused; }
+.saturn-link:hover .ring { animation-play-state: running; }
+
+.sector {
+  position: absolute;
+  width: 1.4rem;
+  height: 2.6rem;
+  top: -1.3rem;
+  left: -0.7rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.65rem;
+  line-height: 2.6rem;
+  color: #3df1f1;
+  font-family: Dosis, sans-serif;
+}
+
+.sector:empty::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(transparent 45%, rgba(61,241,241,0.6) 45% 55%, transparent 55%);
+}
+
+@keyframes spin {
+  from { transform: rotateX(75deg) rotateZ(0turn); }
+  to   { transform: rotateX(75deg) rotateZ(1turn); }
+}
+</style>
+
+<div class="scene">
+  <a class="saturn-link" id="link">
+    <div class="rings-wrap" id="ringsWrap"></div>
+    <span class="label">Edward Ji hun Park</span>
+  </a>
+</div>
+
+<script>
+const text = "Loading...";
+const ringDefs = [
+  { cls: "fwd", radius: 120 },
+  { cls: "rev", radius: 150 },
+];
+const sectors = 30;
+const wrap = document.getElementById("ringsWrap");
+
+ringDefs.forEach(({ cls, radius }) => {
+  const ring = document.createElement("div");
+  ring.className = "ring " + cls;
+
+  for (let s = 0; s < sectors; s++) {
+    const sec = document.createElement("div");
+    sec.className = "sector";
+    sec.textContent = text[s] || "";
+
+    const angle = (360 / sectors) * s;
+    sec.style.transform = `rotateZ(${angle}deg) translateX(${radius}px)`;
+    ring.appendChild(sec);
+  }
+
+  wrap.appendChild(ring);
+});
+</script>
