@@ -43,17 +43,17 @@ export default function Projects() {
 
             // fade in intro animation
             gsap.from(introElements, {
-            y: 50,
-            opacity: 0,
-            duration: 1.2,
-            stagger: 0.15,
-            ease: "power4.out",
-            scrollTrigger: {
-                trigger: introRef.current,
-                start: "top top", 
-                toggleActions: "play reverse play reverse",
-            }
-        });
+                y: 50,
+                opacity: 0,
+                duration: 1.2,
+                stagger: 0.15,
+                ease: "power4.out",
+                scrollTrigger: {
+                    trigger: introRef.current,
+                    start: "top top",
+                    toggleActions: "play reverse play reverse",
+                },
+            });
 
             const tween = gsap.to(sections, {
                 xPercent: -100 * (totalSections - 1),
@@ -156,7 +156,7 @@ export default function Projects() {
         // Progress goes from 0 (slide 0) to 1 (last slide)
         const progress = i / (sections.length - 1);
         const targetY = st.start + (st.end - st.start) * progress;
-        window.scrollTo({ top: targetY, behavior: "smooth" });
+        window.scrollTo({top: targetY, behavior: "smooth"});
     };
 
     return (
@@ -201,7 +201,6 @@ export default function Projects() {
                 ref={wrapperRef}
                 className="flex"
                 style={{background: "#0a0a0a"}}>
-
                 {/* Side navigation dots */}
                 <div
                     style={{
@@ -248,7 +247,8 @@ export default function Projects() {
                             opacity: 0.5,
                             transition: "color 0.3s ease",
                         }}>
-                        {String(activeIndex + 1).padStart(2, "0")}&nbsp;/&nbsp;{String(sections.length).padStart(2, "0")}
+                        {String(activeIndex + 1).padStart(2, "0")}&nbsp;/&nbsp;
+                        {String(sections.length).padStart(2, "0")}
                     </span>
                 </div>
 
