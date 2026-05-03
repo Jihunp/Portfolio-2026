@@ -7,8 +7,6 @@ export default function Home() {
     <main>
       <Hero />
       <Projects />
-      {/* <Timeline /> */}
-      {/* <ProjectScroll /> */}
       <About />
     </main>
   )

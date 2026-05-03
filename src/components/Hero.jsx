@@ -228,7 +228,7 @@ export default function Hero() {
         );
         scene.add(mesh);
 
-        const clock = new THREE.Clock();
+        const clock = new THREE.Timer();
         let animId;
 
         const tick = () => {

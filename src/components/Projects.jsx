@@ -122,27 +122,39 @@ export default function Projects() {
     const sections = [
         {
             index: "01",
-            label: "Design",
-            heading: "Craft that\nfeels alive.",
-            sub: "Every pixel considered. Every interaction intentional.",
+            label: "Full Stack · Basil Tech",
+            heading: "Book\nof Marks",
+            sub: "Collaborative annotation tool built end-to-end. Users highlight text, create personal notes, and view individual annotations in real time.",
+            tech: ["React", "TypeScript", "Firebase", "MUI", "Styled Components"],
+            live: "https://book-of-e994d.web.app/",
+            github: "https://github.com/Jihunp",
         },
         {
             index: "02",
-            label: "Motion",
-            heading: "Movement\nwith meaning.",
-            sub: "Animation that guides, not distracts.",
+            label: "AI · In Development",
+            heading: "Jarvus\nAI",
+            sub: "Personal AI-powered productivity assistant. Integrating OpenAI API with a full-stack architecture — actively shipping toward a 2025 release.",
+            tech: ["React", "Node.js", "OpenAI API", "TypeScript"],
+            live: null,
+            github: "https://github.com/Jihunp",
         },
         {
             index: "03",
-            label: "Systems",
-            heading: "Scale without\nlosing soul.",
-            sub: "Design systems built to flex and endure.",
+            label: "Frontend · Game",
+            heading: "Tetris\nClone",
+            sub: "Fully playable Tetris built purely in React. Leverages advanced state management and component architecture for smooth, frame-perfect gameplay.",
+            tech: ["React", "JavaScript", "CSS"],
+            live: "https://tetris-kappa-blush.vercel.app/",
+            github: "https://github.com/Jihunp",
         },
         {
             index: "04",
-            label: "Launch",
-            heading: "Ship work\nyou're proud of.",
-            sub: "From concept to production, uncompromised.",
+            label: "Frontend · Word Game",
+            heading: "Wordle\nClone",
+            sub: "Pixel-perfect Wordle clone using React hooks for game logic, state, and keyboard interactions — no external game libraries.",
+            tech: ["React", "JavaScript", "React Hooks"],
+            live: "https://wordle-one-coral.vercel.app/",
+            github: "https://github.com/Jihunp",
         },
     ];
 
@@ -183,7 +195,7 @@ export default function Projects() {
                         fontWeight: 800,
                         letterSpacing: "-0.03em",
                     }}>
-                    Our Process
+                    Selected Work
                 </h2>
                 <div
                     style={{
@@ -316,9 +328,95 @@ export default function Projects() {
                                     letterSpacing: "0.01em",
                                     lineHeight: 1.6,
                                     maxWidth: "36ch",
+                                    marginBottom: "clamp(1rem, 2vw, 1.5rem)",
                                 }}>
                                 {s.sub}
                             </p>
+
+                            {/* Tech stack pills */}
+                            <div style={{display: "flex", flexWrap: "wrap", gap: "0.5rem", marginBottom: "clamp(1rem, 2vw, 1.5rem)"}}>
+                                {s.tech.map((tag) => (
+                                    <span
+                                        key={tag}
+                                        style={{
+                                            fontSize: "clamp(0.6rem, 0.9vw, 0.72rem)",
+                                            letterSpacing: "0.12em",
+                                            textTransform: "uppercase",
+                                            padding: "0.35rem 0.85rem",
+                                            borderRadius: "999px",
+                                            border: `1px solid ${textColors[i]}40`,
+                                            color: textColors[i],
+                                            opacity: 0.75,
+                                            fontFamily: "var(--font-mono, monospace)",
+                                        }}>
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
+
+                            {/* Project links */}
+                            <div style={{display: "flex", gap: "0.75rem"}}>
+                                {s.live && (
+                                    <a
+                                        href={s.live}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        style={{
+                                            fontSize: "clamp(0.6rem, 0.9vw, 0.72rem)",
+                                            letterSpacing: "0.2em",
+                                            textTransform: "uppercase",
+                                            padding: "0.6rem 1.5rem",
+                                            borderRadius: "4px",
+                                            border: `1px solid ${textColors[i]}80`,
+                                            background: `${textColors[i]}18`,
+                                            color: textColors[i],
+                                            textDecoration: "none",
+                                            fontFamily: "var(--font-mono, monospace)",
+                                            transition: "opacity 0.2s ease",
+                                        }}
+                                        onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.7")}
+                                        onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}>
+                                        Live Demo ↗
+                                    </a>
+                                )}
+                                {!s.live && (
+                                    <span
+                                        style={{
+                                            fontSize: "clamp(0.6rem, 0.9vw, 0.72rem)",
+                                            letterSpacing: "0.2em",
+                                            textTransform: "uppercase",
+                                            padding: "0.6rem 1.5rem",
+                                            borderRadius: "4px",
+                                            border: `1px solid ${textColors[i]}30`,
+                                            color: textColors[i],
+                                            opacity: 0.4,
+                                            fontFamily: "var(--font-mono, monospace)",
+                                        }}>
+                                        In Progress
+                                    </span>
+                                )}
+                                <a
+                                    href={s.github}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{
+                                        fontSize: "clamp(0.6rem, 0.9vw, 0.72rem)",
+                                        letterSpacing: "0.2em",
+                                        textTransform: "uppercase",
+                                        padding: "0.6rem 1.5rem",
+                                        borderRadius: "4px",
+                                        border: `1px solid ${textColors[i]}30`,
+                                        color: textColors[i],
+                                        opacity: 0.5,
+                                        textDecoration: "none",
+                                        fontFamily: "var(--font-mono, monospace)",
+                                        transition: "opacity 0.2s ease",
+                                    }}
+                                    onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.85")}
+                                    onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.5")}>
+                                    GitHub ↗
+                                </a>
+                            </div>
                         </div>
 
                         {/* Bottom-right section counter */}

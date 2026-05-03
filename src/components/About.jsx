@@ -1,10 +1,10 @@
 import ScrollReveal from "./ScrollReveal";
 
 const stats = [
-    {value: "5+", label: "Years Experience"},
-    {value: "40+", label: "Projects Delivered"},
-    {value: "20+", label: "Happy Clients"},
-    {value: "3", label: "Awards Won"},
+    {value: "3+", label: "Years Dev Experience"},
+    {value: "10+", label: "Pages Shipped at World Relief"},
+    {value: "$1M+", label: "Annual Donations Supported"},
+    {value: "65K+", label: "Users Supported at UW IT"},
 ];
 
 export default function About() {
@@ -67,9 +67,9 @@ export default function About() {
                             fontSize: "clamp(0.85rem, 1.5vw, 1rem)",
                             letterSpacing: "0.05em",
                         }}>
-                        Based wherever the work is good.
+                        Seattle-area developer targeting full-stack &amp; software engineering roles.
                         <br />
-                        Available for freelance &amp; collaborations.
+                        Open to full-time opportunities — remote or hybrid.
                     </p>
                 </ScrollReveal>
             </div>
