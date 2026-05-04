@@ -233,6 +233,7 @@ export default function Hero() {
 
         const tick = () => {
             animId = requestAnimationFrame(tick);
+            clock.update();
             uniforms.uTime.value += Math.min(clock.getDelta(), 0.1);
             touch.update();
             renderer.render(scene, camera);

@@ -128,6 +128,7 @@ export default function Projects() {
             tech: ["React", "TypeScript", "Firebase", "MUI", "Styled Components"],
             live: "https://book-of-e994d.web.app/",
             github: "https://github.com/Jihunp",
+            media: { type: "image", src: "/projects/book-of-marks.png", alt: "Book of Marks screenshot" },
         },
         {
             index: "02",
@@ -137,6 +138,7 @@ export default function Projects() {
             tech: ["React", "Node.js", "OpenAI API", "TypeScript"],
             live: null,
             github: "https://github.com/Jihunp",
+            media: null,
         },
         {
             index: "03",
@@ -146,6 +148,7 @@ export default function Projects() {
             tech: ["React", "JavaScript", "CSS"],
             live: "https://tetris-kappa-blush.vercel.app/",
             github: "https://github.com/Jihunp",
+            media: { type: "video", src: "/projects/", alt: "Tetris gameplay demo" },
         },
         {
             index: "04",
@@ -155,6 +158,7 @@ export default function Projects() {
             tech: ["React", "JavaScript", "React Hooks"],
             live: "https://wordle-one-coral.vercel.app/",
             github: "https://github.com/Jihunp",
+            media: { type: "image", src: "/projects/wordle.png", alt: "Wordle clone screenshot" },
         },
     ];
 
@@ -282,9 +286,61 @@ export default function Projects() {
                                 color: accentColors[i],
                                 letterSpacing: "-0.05em",
                                 userSelect: "none",
+                                opacity: s.media ? 0.06 : 1,
                             }}>
                             {s.index}
                         </span>
+
+                        {/* Project media preview */}
+                        {s.media && (
+                            <div
+                                className="absolute hidden md:block"
+                                style={{
+                                    right: "clamp(4rem, 8vw, 9rem)",
+                                    top: "50%",
+                                    transform: "translateY(-52%)",
+                                    width: "clamp(260px, 36vw, 560px)",
+                                    zIndex: 1,
+                                    borderRadius: "10px",
+                                    overflow: "hidden",
+                                    border: `1px solid ${textColors[i]}20`,
+                                    boxShadow: `0 24px 64px rgba(0,0,0,0.45), 0 0 0 1px ${textColors[i]}08`,
+                                }}>
+                                {/* Browser chrome bar */}
+                                <div
+                                    style={{
+                                        background: `${textColors[i] === "#f5f5f5" ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)"}`,
+                                        padding: "0.55rem 0.85rem",
+                                        display: "flex",
+                                        alignItems: "center",
+                                        gap: "0.4rem",
+                                        borderBottom: `1px solid ${textColors[i]}12`,
+                                    }}>
+                                    {["#ff5f57", "#febc2e", "#28c840"].map((c) => (
+                                        <div key={c} style={{width: 10, height: 10, borderRadius: "50%", background: c, opacity: 0.85}} />
+                                    ))}
+                                </div>
+
+                                {s.media.type === "video" ? (
+                                    <video
+                                        muted
+                                        loop
+                                        playsInline
+                                        preload="none"
+                                        src={activeIndex === i ? s.media.src : undefined}
+                                        onMouseEnter={(e) => e.currentTarget.play()}
+                                        onMouseLeave={(e) => e.currentTarget.pause()}
+                                        style={{width: "100%", display: "block", aspectRatio: "16/9", objectFit: "cover", cursor: "pointer"}}
+                                    />
+                                ) : (
+                                    <img
+                                        src={s.media.src}
+                                        alt={s.media.alt}
+                                        style={{width: "100%", display: "block", aspectRatio: "16/9", objectFit: "cover"}}
+                                    />
+                                )}
+                            </div>
+                        )}
 
                         {/* Top-left label */}
                         <span

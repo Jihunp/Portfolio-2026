@@ -1,7 +1,5 @@
 import './globals.css'
-// import CursorGlow from '@/components/CursorGlow'
 import Navbar from '@/components/Navbar'
-import Hero from '@/components/Hero'
 import SocialSideBar from '@/components/SocialSideBar'
 import EmailSideBar from '@/components/EmailSideBar'
 import { Geist, Geist_Mono, Syne } from "next/font/google"
