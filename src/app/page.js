@@ -1,6 +1,7 @@
 import About from '@/components/About'
 import Hero from '@/components/Hero'
 import Projects from '@/components/Projects'
+import ProjectShorts from '@/components/ProjectShorts'
 import Timeline from '@/components/Timeline'
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
     <main>
       <Hero />
       <Projects />
+      <ProjectShorts />
       <About />
       <Timeline />
     </main>
