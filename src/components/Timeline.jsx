@@ -101,7 +101,7 @@ export default function Timeline() {
     }, []);
 
     return (
-        <section id="journey" className="pt-40 pb-[50vh] px-6 bg-white">
+        <section id="journey" className="pt-40 pb-32 px-6 bg-white">
             <div className="max-w-6xl mx-auto">
 
                 {/* Eyebrow — matches About.jsx exactly */}

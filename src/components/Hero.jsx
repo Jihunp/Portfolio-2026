@@ -400,7 +400,9 @@ export default function Hero() {
                     initial={{opacity: 0, y: 16}}
                     animate={{opacity: 1, y: 0}}
                     transition={{duration: 1, delay: 0.8}}>
-                    <button
+                    <button 
+                    onClick={() => document.getElementById('projects').scrollIntoView({behavior: "smooth"})}
+                    href="#projects"
                         style={{
                             fontFamily: "var(--font-mono)",
                             fontSize: "0.62rem",
@@ -446,6 +448,7 @@ export default function Hero() {
                         View Work
                     </button>
                     <button
+                    onClick={() => document.getElementById('contact-form').scrollIntoView({behavior: "smooth"})}
                         style={{
                             fontFamily: "var(--font-mono)",
                             fontSize: "0.62rem",

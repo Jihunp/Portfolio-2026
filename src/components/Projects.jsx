@@ -293,6 +293,7 @@ const SHAPES = {
 
                 {sections.map((s, i) => (
                     <section
+                        id="projects"
                         key={i}
                         ref={(el) => (sectionsRef.current[i] = el)}
                         className="w-screen h-screen flex-shrink-0 relative flex flex-col items-center"
@@ -511,7 +512,7 @@ const SHAPES = {
                             {/* Project links */}
                             <div style={{display: "flex", gap: "0.75rem", justifyContent: "center"}}>
                                 {s.live ? (
-                                    <a
+                                    <button
                                         href={s.live}
                                         target="_blank"
                                         rel="noopener noreferrer"
@@ -531,7 +532,7 @@ const SHAPES = {
                                         onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.7")}
                                         onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}>
                                         Live Demo ↗
-                                    </a>
+                                    </button>
                                 ) : (
                                     <span
                                         style={{

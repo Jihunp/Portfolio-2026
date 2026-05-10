@@ -30,7 +30,7 @@ const links = [
 export default function GetInTouch() {
     return (
         <section
-            id="contact"
+            id="contact-form"
             className="bg-background pr-[clamp(1.5rem,6vw,6rem)] pl-[clamp(3rem,12vw,14rem)] pt-[clamp(5rem,12vh,9rem)] pb-[clamp(3rem,6vh,5rem)]">
 
             {/* ── AVAILABILITY BADGE ─────────────────────────────────────── */}
