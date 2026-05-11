@@ -283,7 +283,7 @@ export default function Hero() {
                 // onWheel={(e) => e.stopPropagation()}
             >
             {insideHero && (
-            <div
+            <div 
                 style={{
                     position: "fixed",
                     left: cursorPos.x,
@@ -329,7 +329,9 @@ export default function Hero() {
             />
 
             {/* Main content */}
-            <section className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center px-[8vw]">
+            <section 
+            id="hero"
+            className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center px-[8vw]">
                 <motion.span
                     className="font-mono text-[0.9rem] tracking-[0.4em] uppercase mb-7"
                     initial={{opacity: 0, y: 16}}

@@ -2,10 +2,9 @@
 import {useState, useEffect, useRef} from "react";
 
 const navLinks = [
-    {label: "Home", href: "#home"},
+    {label: "Home", href: "#hero"},
     {label: "Projects", href: "#projects"},
-    {label: "Blog", href: "#blog"},
-    {label: "Contact", href: "#contact"},
+    {label: "Contact", href: "#contact-form"},
 ];
 
 export default function Navbar() {
@@ -14,6 +13,14 @@ export default function Navbar() {
     const [active, setActive] = useState("Home");
     const [mobileOpen, setMobileOpen] = useState(false);
     const lastScrollY = useRef(0);
+
+    const handleNavClick = (e, link) => {
+        e.preventDefault();
+        setActive(link.label);
+        const id = link.href.replace('#', '');
+
+        document.getElementById(id)?.scrollIntoView({behavior: 'smooth'});
+    };
 
     useEffect(() => {
         const onScroll = () => {
@@ -61,7 +68,7 @@ export default function Navbar() {
                     }}>
                     {/* Logo */}
                     <a
-                        href="#home"
+                        href="#hero"
                         onClick={() => setActive("Home")}
                         className="text-xl font-semibold tracking-tight cursor-pointer transition-all duration-300"
                         style={{
@@ -85,10 +92,7 @@ export default function Navbar() {
                             <li key={link.label}>
                                 <a
                                     href={link.href}
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        setActive(link.label);
-                                    }}
+                                    onClick={(e) => handleNavClick(e, link)}
                                     className="relative px-4 py-2 text-sm rounded-lg transition-all duration-300 cursor-pointer"
                                     style={{
                                         color:
@@ -183,8 +187,7 @@ export default function Navbar() {
                             key={link.label}
                             href={link.href}
                             onClick={(e) => {
-                                e.preventDefault();
-                                setActive(link.label);
+                                handleNavClick(e, link);
                                 setMobileOpen(false);
                             }}
                             className="block px-4 py-3 text-base rounded-lg transition-all duration-300 cursor-pointer"
