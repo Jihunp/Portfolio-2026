@@ -55,6 +55,7 @@ function ProjectCard({ project }) {
             className="
                 group
                 relative aspect-square
+                w-full
                 rounded-lg overflow-hidden
                 bg-surface no-underline cursor-pointer
                 border border-white/[0.08] border-l-[3px] border-l-muted
@@ -62,25 +63,25 @@ function ProjectCard({ project }) {
                 hover:-translate-y-1 hover:shadow-2xl hover:border-l-accent
             ">
             <div className="
-                absolute inset-0 p-5
+                absolute inset-0 p-6
                 flex flex-col justify-between
                 transition-opacity duration-200
                 group-hover:opacity-0
             ">
                 <div>
-                    <span className="block text-[0.62rem] tracking-[0.28em] uppercase text-muted font-mono mb-2">
+                    <span className="block text-xs tracking-[0.22em] uppercase text-muted font-mono mb-3">
                         {project.index} — {project.category}
                     </span>
-                    <h3 className="text-xl font-bold text-foreground tracking-tight leading-tight m-0">
+                    <h3 className="text-2xl font-bold text-foreground tracking-tight leading-tight m-0">
                         {project.title}
                     </h3>
                 </div>
 
-                <div className="flex flex-wrap gap-1">
+                <div className="flex flex-wrap gap-1.5">
                     {project.tech.map((tag) => (
                         <span
                             key={tag}
-                            className="text-[0.58rem] tracking-[0.1em] uppercase px-2 py-0.5 rounded-full border border-muted/25 text-muted font-mono">
+                            className="text-[0.62rem] tracking-[0.1em] uppercase px-2.5 py-1 rounded-full border border-muted/25 text-muted font-mono">
                             {tag}
                         </span>
                     ))}
@@ -116,18 +117,20 @@ export default function ProjectShorts() {
     return (
         <section className="bg-background px-[clamp(1.5rem,6vw,6rem)] py-[clamp(4rem,10vh,8rem)]">
 
-            <div className="mb-[clamp(2.5rem,6vh,4rem)]">
-                <p className="text-[0.7rem] tracking-[0.3em] uppercase text-muted font-mono mb-2">
-                    Quick look
-                </p>
-                <h2 className="text-[clamp(2rem,4.5vw,3.5rem)] font-extrabold text-foreground tracking-tighter leading-none m-0">
-                    Project Shorts
-                </h2>
-            </div>
-            <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-3">
-                {projects.map((project) => (
-                    <ProjectCard key={project.index} project={project} />
-                ))}
+            <div className="w-fit mx-auto">
+                <div className="mb-[clamp(2.5rem,6vh,4rem)]">
+                    <p className="text-[0.7rem] tracking-[0.3em] uppercase text-muted font-mono mb-2">
+                        Quick look
+                    </p>
+                    <h2 className="text-[clamp(2rem,4.5vw,3.5rem)] font-extrabold text-foreground tracking-tighter leading-none m-0">
+                        Project Shorts
+                    </h2>
+                </div>
+                <div className="grid grid-cols-[260px] sm:grid-cols-[repeat(2,260px)] lg:grid-cols-[repeat(3,260px)] xl:grid-cols-[repeat(4,260px)] gap-4">
+                    {projects.map((project) => (
+                        <ProjectCard key={project.index} project={project} />
+                    ))}
+                </div>
             </div>
         </section>
     );
