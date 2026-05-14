@@ -11,7 +11,7 @@
 const links = [
     {
         label: "LinkedIn",
-        href: "https://www.linkedin.com/in/jihunpark",
+        href: "https://www.linkedin.com/in/edward-jihun-park/",
         mono: true,
     },
     {

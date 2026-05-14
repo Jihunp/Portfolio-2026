@@ -9,30 +9,30 @@ import {
 export default function SocialSideBar() {
     const socials = [
         {
-            href: "https://github.com/yourusername",
+            href: "https://github.com/jihunp",
             label: "GitHub",
             icon: <FiGithub size={20} />,
         },
+        // {
+        //     href: "https://instagram.com/yourusername",
+        //     label: "Instagram",
+        //     icon: <FiInstagram size={20} />,
+        // },
+        // {
+        //     href: "https://twitter.com/yourusername",
+        //     label: "Twitter",
+        //     icon: <FiTwitter size={20} />,
+        // },
         {
-            href: "https://instagram.com/yourusername",
-            label: "Instagram",
-            icon: <FiInstagram size={20} />,
-        },
-        {
-            href: "https://twitter.com/yourusername",
-            label: "Twitter",
-            icon: <FiTwitter size={20} />,
-        },
-        {
-            href: "https://linkedin.com/in/yourusername",
+            href: "https://www.linkedin.com/in/edward-jihun-park/",
             label: "LinkedIn",
             icon: <FiLinkedin size={20} />,
         },
-        {
-            href: "https://codepen.io/yourusername",
-            label: "CodePen",
-            icon: <FiCodepen size={20} />,
-        },
+        // {
+        //     href: "https://codepen.io/yourusername",
+        //     label: "CodePen",
+        //     icon: <FiCodepen size={20} />,
+        // },
     ];
 
     return (
