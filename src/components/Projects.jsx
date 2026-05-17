@@ -592,7 +592,7 @@ const SHAPES = {
             </div>
 
             {/* Outro spacer */}
-            <div
+            {/* <div
                 className="h-screen flex flex-col items-center justify-center gap-4"
                 style={{background: "#0a0a0a", color: "#f5f5f5"}}>
                 <p style={{fontSize: "clamp(0.7rem, 1.2vw, 1rem)", letterSpacing: "0.3em", opacity: 0.4, textTransform: "uppercase"}}>
@@ -601,7 +601,7 @@ const SHAPES = {
                 <h2 style={{fontSize: "clamp(2rem, 5vw, 5rem)", fontWeight: 800, letterSpacing: "-0.03em"}}>
                     Get in touch
                 </h2>
-            </div>
+            </div> */}
         </div>
     );
 }
